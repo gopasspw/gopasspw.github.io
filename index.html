@@ -200,7 +200,7 @@
 				<h3>
 					Debian and Ubuntu
 				</h3>
-                <pre><code>https://dl.bintray.com/gopasspw/gopass/pool/main/g/gopass/gopass-1.7.2-linux-amd64.deb
+        <pre><code>https://dl.bintray.com/gopasspw/gopass/pool/main/g/gopass/gopass-1.7.2-linux-amd64.deb
 sudo dpkg -i gopass-1.7.2-linux-amd64.deb</code></pre>
 				<h3>
 					ArchLinux
@@ -211,6 +211,16 @@ sudo dpkg -i gopass-1.7.2-linux-amd64.deb</code></pre>
 				</h3>
 				<pre><code>layman -a go-overlay
 emerge -av gopass</code></pre>
+        <h3>
+          RedHat / CentOS
+        </h3>
+        <pre><code># if you're using dnf (needs dnf-plugins-core)
+dnf copr enable daftaupe/gopass
+dnf install gopass
+# of if you're using an older distribution (needs yum-plugin-copr)
+yum copr enable daftaupe/gopass
+yum install gopass
+</code></pre>
 			</div>
 			<div class="tab-pane" id="install-macos" role="tabpanel">
 
