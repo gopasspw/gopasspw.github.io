@@ -6,30 +6,9 @@
     <description>Recent content on gopass - the team password manager</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Jan 2018 17:39:54 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>docs</title>
-      <link>/docs/</link>
-      <pubDate>Thu, 18 Jan 2018 17:39:54 +0100</pubDate>
-      
-      <guid>/docs/</guid>
-      <description>Table of Contents  Abstract Demo Features Installation Development Credit &amp;amp; License Community Contributing Acknowledgements Further Documentation  Abstract  Password management should be simple and follow Unix philosophy. With pass, each secret lives inside of a gpg encrypted file whose filename is the title of the website or resource that requires the secret. These encrypted files may be organized into meaningful folder hierarchies, copied from computer to computer, and, in general, manipulated using standard command line file management utilities.</description>
-    </item>
-    
-    <item>
-      <title>faq</title>
-      <link>/faq/</link>
-      <pubDate>Wed, 01 Feb 2017 17:39:42 +0100</pubDate>
-      
-      <guid>/faq/</guid>
-      <description>FAQ error: gpg failed to sign the data On macOS upgrading gnupg can lead to Git commit signing breaking.
-Be sure to have pinentry-mac installed, set gpg.program to gpg2 and add the no-tty option to your gpg.conf.
-brew install pinentry-mac git config --global gpg.program $(which gpg2) echo &amp;quot;no-tty&amp;quot; &amp;gt;&amp;gt;~/.gnupg/gpg.conf  What&amp;rsquo;s up with the cute gopher? Our gopher was made by Vincent Leinweber while the original gopher is created by Renee French.</description>
-    </item>
     
   </channel>
 </rss>
