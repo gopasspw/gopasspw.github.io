@@ -83,7 +83,7 @@
                     <a href="https://github.com/gopasspw/gopass" target="_github" class="btn btn-secondary mb-2">
                         <i class="fa fa-github"></i> GitHub
                     </a>
-                    <a href="https://twitter.com/intent/tweet?text=gopass+is+a+simple+but+powerful+password+manager+for+your+terminal.+%23gopass&url=https://gopass.pw"
+                    <a href="https://twitter.com/intent/tweet?text=gopass+is+a+simple+but+powerful+password+manager+for+your+terminal.+%23gopass&url=https://www.gopass.pw"
                         target="_twitter" class="btn btn-secondary mb-2">
                         <i class="fa fa-twitter"></i> Tweet
                     </a>
