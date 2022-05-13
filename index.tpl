@@ -215,6 +215,10 @@
                         </h3>
                         <pre><code>emerge -av gopass</code></pre>
                         <h3>
+                          Fedora
+                        </h3>
+                        <pre><code>dnf install gopass</code></pre>
+                        <h3>
                           RedHat / CentOS
                         </h3>
                         <pre><code>dnf copr enable daftaupe/gopass
