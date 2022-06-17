@@ -199,8 +199,22 @@
                         <h3>
                             Debian and Ubuntu
                         </h3>
+                        <ul>
+                            <li>Using the deb package diretly:
                         <pre><code>wget https://github.com/gopasspw/gopass/releases/download/v{{ .Version }}/gopass_{{ .Version }}_linux_amd64.deb
-        sudo dpkg -i gopass_{{ .Version }}_linux_amd64.deb</code></pre>
+sudo dpkg -i gopass_{{ .Version }}_linux_amd64.deb</code></pre>
+                            </li>
+                            <li>Using our APT repository:
+                            <pre>curl https://packages.gopass.pw/repos/gopass/gopass-archive-keyring.gpg | sudo tee /usr/share/keyrings/gopasss-archive-keyring.gpg
+cat << EOF | sudo tee /etc/apt/sources.list.d/gopass.sources
+Types: deb
+URIs: https://packages.gopass.pw/repos/gopasss
+Suites: stable
+Architectures: amd64 arm64 armhf
+Components: main
+Signed-By: /usr/share/keyrings/gopass-archive-keyring.gpg
+EOF
+sudo apt install gopass-archive-keyring gopass
                         <b>WARNING</b>: Debian and it's derivates ship a package `gopass` that is not related to `gopass`. See <a href="https://github.com/gopasspw/gopass/issues/1849#issuecomment-802789285">#1849</a> for more information.
                         <h3>
                             Alpine Linux
