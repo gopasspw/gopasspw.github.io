@@ -270,7 +270,8 @@ dnf install gopass</code></pre>
                         <h3>
                             Chocolatey
                         </h3>
-                        <pre><code>choco install gopass</code></pre>
+                        <pre><code>choco install gpg4win
+choco install gopass</code></pre>
                         <h3>
                             Scoop
                         </h3>
