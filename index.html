@@ -214,7 +214,8 @@ Architectures: amd64 arm64 armhf
 Components: main
 Signed-By: /usr/share/keyrings/gopass-archive-keyring.gpg
 EOF
-sudo apt install gopass-archive-keyring gopass
+sudo apt install gopass-archive-keyring gopass</pre></li>
+                        </ul>
                         <b>WARNING</b>: Debian and it's derivates ship a package `gopass` that is not related to `gopass`. See <a href="https://github.com/gopasspw/gopass/issues/1849#issuecomment-802789285">#1849</a> for more information.
                         <h3>
                             Alpine Linux
