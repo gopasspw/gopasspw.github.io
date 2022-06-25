@@ -204,11 +204,11 @@
                         <pre><code>wget https://github.com/gopasspw/gopass/releases/download/v1.14.3/gopass_1.14.3_linux_amd64.deb
 sudo dpkg -i gopass_1.14.3_linux_amd64.deb</code></pre>
                             </li>
-                            <li>Using our APT repository:
+                            <li>Using our <a href="https://packages.gopass.pw/repos/gopass/">APT repository</a>:
                             <pre>curl https://packages.gopass.pw/repos/gopass/gopass-archive-keyring.gpg | sudo tee /usr/share/keyrings/gopasss-archive-keyring.gpg
 cat &lt;&lt; EOF | sudo tee /etc/apt/sources.list.d/gopass.sources
 Types: deb
-URIs: https://packages.gopass.pw/repos/gopasss
+URIs: https://packages.gopass.pw/repos/gopass
 Suites: stable
 Architectures: amd64 arm64 armhf
 Components: main
@@ -218,23 +218,23 @@ sudo apt install gopass-archive-keyring gopass</pre></li>
                         </ul>
                         <b>WARNING</b>: Debian and it's derivates ship a package `gopass` that is not related to `gopass`. See <a href="https://github.com/gopasspw/gopass/issues/1849#issuecomment-802789285">#1849</a> for more information.
                         <h3>
-                            Alpine Linux
+                            <a href="https://pkgs.alpinelinux.org/packages?name=gopass&branch=edge">Alpine Linux</a>
                         </h3>
                         <pre><code>apk add gopass</code></pre>
                         <h3>
-                            ArchLinux
+                            <a href="https://archlinux.org/packages/community/x86_64/gopass/">ArchLinux</a>
                         </h3>
                         <pre><code>sudo pacman -S gopass</code></pre>
                         <h3>
-                            Gentoo
+                            <a href="https://packages.gentoo.org/packages/app-admin/gopass">Gentoo</a>
                         </h3>
                         <pre><code>emerge -av gopass</code></pre>
                         <h3>
-                          Fedora
+                          <a href="https://packages.fedoraproject.org/pkgs/gopass/gopass/">Fedora</a>
                         </h3>
                         <pre><code>dnf install gopass</code></pre>
                         <h3>
-                          RedHat / CentOS
+                          <a href="https://copr.fedorainfracloud.org/coprs/daftaupe/gopass/">RedHat / CentOS</a>
                         </h3>
                         <pre><code>dnf copr enable daftaupe/gopass
 dnf install gopass</code></pre>
@@ -252,7 +252,7 @@ dnf install gopass</code></pre>
                     </div>
                     <div class="tab-pane" id="install-macos" role="tabpanel">
                         <h3>
-                            Homebrew
+                            <a href="https://formulae.brew.sh/formula/gopass#default">Homebrew</a>
                         </h3>
                         <pre><code>brew install gopass</code></pre>
                         <h3>
@@ -269,12 +269,12 @@ dnf install gopass</code></pre>
                     </div>
                     <div class="tab-pane" id="install-windows" role="tabpanel">
                         <h3>
-                            Chocolatey
+                            <a href="https://community.chocolatey.org/packages/gopass">Chocolatey</a>
                         </h3>
                         <pre><code>choco install gpg4win
 choco install gopass</code></pre>
                         <h3>
-                            Scoop
+                            <a href="https://scoop.sh/#/apps?q=gopass&s=0&d=1&o=true">Scoop</a>
                         </h3>
                         <pre><code>scoop install gopass</code></pre>
                         <h3>
