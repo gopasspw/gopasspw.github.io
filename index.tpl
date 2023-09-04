@@ -278,6 +278,11 @@ choco install gopass</code></pre>
                         </h3>
                         <pre><code>scoop install gopass</code></pre>
                         <h3>
+                            <a href="https://learn.microsoft.com/windows/package-manager/">Winget</a>
+                        </h3>
+                        <pre><code>winget install GnuPG.Gpg4win
+winget install gopass.gopass</code></pre>
+                        <h3>
                             Binary Download
                         </h3>
                         <p>
