@@ -1,0 +1,163 @@
+# Gopass
+
+> Gopass is the slightly more awesome standard unix password manager for teams.
+> It is a simple but powerful password manager for the terminal.
+
+## How does it work?
+
+By default your credentials are encrypted with GPG and versioned in git. This can be customized easily. The primary interface is the command line, making it an excellent choice for CLI fans, CI/CD systems or anything you can hook it up with. Gopass can also integrate with your browser so you can largely avoid the command line - if you want.
+
+## Dependencies
+
+Most users will need `gpg` and `git`. But it is possible to use it without `git` and `gpg`.
+
+## Installation
+
+`gopass` is available on all major operating systems, including Linux, MacOS and Windows. The installation method depends
+on the OS and the Distribution.
+
+### MacOS
+
+```
+brew install gopass
+```
+
+### Fedora / RedHat / CentOS
+
+```
+dnf install gopass
+```
+
+### Arch Linux
+
+```
+pacman -S gopass
+```
+
+### Debian / Ubuntu
+
+Important: The `gopass` package in Debian and derivates is a different project.
+
+```
+curl https://packages.gopass.pw/repos/gopass/gopass-archive-keyring.gpg | sudo tee /usr/share/keyrings/gopass-archive-keyring.gpg >/dev/null
+cat << EOF | sudo tee /etc/apt/sources.list.d/gopass.sources
+Types: deb
+URIs: https://packages.gopass.pw/repos/gopass
+Suites: stable
+Architectures: all amd64 arm64 armhf
+Components: main
+Signed-By: /usr/share/keyrings/gopass-archive-keyring.gpg
+EOF
+sudo apt update
+sudo apt install gopass gopass-archive-keyring
+```
+
+### Windows
+
+```
+winget install Git.Git
+winget install GnuPG.Gpg4win
+winget install gopass.gopass
+```
+
+Other installation options can be found in our [setup.md](https://github.com/gopasspw/gopass/blob/master/docs/setup.md).
+
+## Quick Start
+
+```
+# Initialize a new gopass installation (configuration and password storage):
+gopass setup
+# Hint: Use `gopass setup --crypto age` to use [age](https://age-encryption.org/) instead of Gpg for encyption.
+
+# Create a new secret (interactive):
+gopass create
+# This will prompt for the name of the secret and the content (password).
+
+# List all existing secrets
+gopass ls
+
+# Copy an existing secret `foo` to the clipboard:
+gopass show -c foo
+
+# Remove an existing secret
+gopass rm foo
+
+# Command structure
+gopass [<command>] [options] [args]
+# Shortcut for gopass show [<key>]
+gopass [<key>]
+
+# Enter the gopass REPL
+gopass
+
+# Find all entries matching the search string
+gopass find github
+
+# List your store
+gopass ls
+
+# List all mounts
+gopass mounts
+
+# List all recipients
+gopass recipients
+
+# Sync with all remotes
+gopass sync
+
+# Setup a new store
+gopass setup
+```
+
+## Docs
+
+* [Available backends](https://github.com/gopasspw/gopass/blob/master/docs/backends.md)
+* [Configuration options](https://github.com/gopasspw/gopass/blob/master/docs/config.md)
+* [FAQ](https://github.com/gopasspw/gopass/blob/master/docs/faq.md)
+* [Features](https://github.com/gopasspw/gopass/blob/master/docs/features.md)
+* [Extending gopass](https://github.com/gopasspw/gopass/blob/master/docs/hacking.md)
+* [Secret formats](https://github.com/gopasspw/gopass/blob/master/docs/secrets.md)
+* [Security](https://github.com/gopasspw/gopass/blob/master/docs/security.md)
+* [commands/grep.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/grep.md)
+* [commands/move.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/move.md)
+* [commands/templates.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/templates.md)
+* [commands/find.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/find.md)
+* [commands/gopass.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/gopass.md)
+* [commands/init.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/init.md)
+* [commands/delete.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/delete.md)
+* [commands/env.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/env.md)
+* [commands/fsck.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/fsck.md)
+* [commands/history.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/history.md)
+* [commands/mounts.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/mounts.md)
+* [commands/process.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/process.md)
+* [commands/cat.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/cat.md)
+* [commands/clone.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/clone.md)
+* [commands/create.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/create.md)
+* [commands/edit.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/edit.md)
+* [commands/insert.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/insert.md)
+* [commands/config.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/config.md)
+* [commands/pwgen.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/pwgen.md)
+* [commands/sync.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/sync.md)
+* [commands/generate.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/generate.md)
+* [commands/list.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/list.md)
+* [commands/update.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/update.md)
+* [commands/recipients.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/recipients.md)
+* [commands/convert.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/convert.md)
+* [commands/link.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/link.md)
+* [commands/show.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/show.md)
+* [commands/audit.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/audit.md)
+* [commands/otp.md](https://github.com/gopasspw/gopass/blob/master/docs/commands/otp.md)
+* [backends/gpg.md](https://github.com/gopasspw/gopass/blob/master/docs/backends/gpg.md)
+* [backends/fs.md](https://github.com/gopasspw/gopass/blob/master/docs/backends/fs.md)
+* [backends/gitfs.md](https://github.com/gopasspw/gopass/blob/master/docs/backends/gitfs.md)
+* [backends/age.md](https://github.com/gopasspw/gopass/blob/master/docs/backends/age.md)
+* [usecases/secure-otp.md](https://github.com/gopasspw/gopass/blob/master/docs/usecases/secure-otp.md)
+* [usecases/gpaste.md](https://github.com/gopasspw/gopass/blob/master/docs/usecases/gpaste.md)
+* [usecases/multi-store.md](https://github.com/gopasspw/gopass/blob/master/docs/usecases/multi-store.md)
+* [usecases/readonly-store.md](https://github.com/gopasspw/gopass/blob/master/docs/usecases/readonly-store.md)
+* [Go Doc](https://pkg.go.dev/github.com/gopasspw/gopass)
+* [git-credential-gopass](https://github.com/gopasspw/git-credential-gopass) - A git credential helper using gopass as a backend.
+* [gopassbridge](https://github.com/gopasspw/gopassbridge) - A browser plugin to use gopass in the browser.
+* [gopass-jsonapi](https://github.com/gopasspw/gopass-jsonapi) - The backend for gopassbridge.
+* [gopass-summon-provider](https://github.com/gopasspw/gopass-summon-provider) - A summon provider using gopass.
+* [gopass-hibp](https://github.com/gopasspw/gopass-hibp) - A haveibeenpwnd.com password leak checker for gopass.
