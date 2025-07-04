@@ -1,0 +1,327 @@
+/* ======== CSS Variables & Global Styles ======== */
+:root {
+    --bg-color: #121212;
+    --surface-color: #1e1e1e;
+    --primary-color: #00aaff;
+    --text-color: #e0e0e0;
+    --text-muted-color: #a0a0a0;
+    --border-color: #333333;
+    --font-family-sans: 'Inter', sans-serif;
+    --font-family-mono: 'Source Code Pro', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family-sans);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.2rem; }
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-muted-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+}
+
+section {
+    padding: 6rem 0;
+}
+
+/* ======== Header ======== */
+.main-header {
+    background: var(--bg-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center;
+    gap: 0.75rem; /* Space between logo and text */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.logo img {
+    height: 40px; /* Control the size of the logo */
+    width: auto;
+}
+
+.main-nav a {
+    color: var(--text-muted-color);
+    margin-left: 1.5rem;
+    font-size: 1rem;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* ======== Buttons ======== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0088cc;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--surface-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+/* ======== Hero Section ======== */
+/* ======== Hero Section ======== */
+.hero-section {
+    text-align: center;
+    padding: 4rem 0;
+    position: relative; /* Needed for background positioning */
+    overflow: hidden; /* Keeps the background gopher contained */
+
+    /* Subtle background logo */
+    background-image: url('https://raw.githubusercontent.com/gopasspw/gopasspw.github.io/master/gopher/gopass-gopher.png');
+    background-repeat: no-repeat;
+    background-position: 95% 50%; /* Position to the right and center vertically */
+    background-size: 300px; /* Control its size */
+    background-blend-mode: overlay;
+    opacity: 0.9; /* Make it part of the page, not a sticker on top */
+}
+
+/* Add a pseudo-element for the dark overlay so text remains readable */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-color);
+    opacity: 0.95; /* Adjust this to make the logo more or less visible */
+    z-index: 0;
+}
+
+/* Make sure the actual content is on top of the overlay */
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section .subtitle {
+    max-width: 600px;
+    margin: 1rem auto 2rem;
+    font-size: 1.1rem;
+}
+
+.hero-visual {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 650px;
+    margin: 2rem auto;
+    text-align: left;
+}
+
+.hero-visual pre,
+.get-started-section pre {
+    background: #000;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.hero-visual code,
+.get-started-section code {
+    font-family: var(--font-family-mono);
+    color: #0f0; /* Classic terminal green */
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+.cta-buttons .btn {
+    margin: 0 0.5rem;
+}
+
+/* ======== Features Section ======== */
+.features-section {
+    background-color: var(--surface-color);
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--bg-color);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.1);
+}
+
+/* ======== Ecosystem Section ======== */
+.addon-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.addon-card {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.addon-card a {
+    font-weight: bold;
+}
+
+/* ======== Security Section ======== */
+.security-section {
+    background-color: var(--surface-color);
+}
+
+.security-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    text-align: center;
+}
+
+.security-point .btn {
+    margin-top: 1rem;
+}
+
+
+/* ======== Get Started Section ======== */
+.install-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.get-started-section {
+    text-align: center;
+}
+
+.step {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+/* ======== Footer ======== */
+.main-footer-bottom {
+    background: var(--surface-color);
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.footer-links {
+    margin: 1.5rem 0;
+}
+
+.footer-links a {
+    margin: 0 1rem;
+    color: var(--text-muted-color);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* ======== Responsive Design ======== */
+@media (max-width: 992px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    .security-points {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav { display: none; } /* Simple solution for mobile nav */
+    .addon-cards,
+    .install-steps {
+        grid-template-columns: 1fr;
+    }
+}
